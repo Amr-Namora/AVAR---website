@@ -1,0 +1,1200 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    
+    }
+    
+    body{
+        padding: 0;
+        margin: 0;
+        transform-style: preserve-3d;
+        font-family: 'Cairo', sans-serif;
+    }
+    /*=================== top-bar ==================*/
+    
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+    
+    .top-bar {
+        position: fixed;
+    display: flex;
+        width: 100%;
+        position: fixed;
+        justify-content: space-between;
+        height: 5em;
+       background: #4e748792; /* إذا لم يستطع المتصفح استخدام لون الخلفية المتدرج سيستخدم هذا */
+        z-index: 10;
+        color: #003366;
+        padding: 0 13.7em;
+    }
+    
+    @media screen and (max-width:1000px) {
+        .top-bar {
+            padding: 0 5% ;
+        }
+    }
+        
+    
+    
+    .logo-img {
+    height:100px ;
+    margin-top: -5px;
+    
+    }
+    .small-logo{
+    height:100px ;
+display: none;
+    }
+    @media screen and (max-width:1000px) {
+
+    .logo-img {margin-left: 0;}
+}
+
+    @media screen and (max-width:700px) {
+        .logo-img {display: none;}
+        .small-logo{display: block;}
+    }
+    
+    .title {
+        justify-content: space-around;
+        text-align: center;
+        font-family: 'Amiri', serif;
+        
+    
+    }
+    
+    
+ 
+    
+    .left-options {
+        display: flex;
+    }
+    
+    .right-options {
+        display: flex;
+        align-items: center;
+        height: 5em;
+    }
+    
+    .search-img {
+        margin-right: 0.8em;
+        cursor: pointer;
+        width: 3em;
+        height: 3em;
+    }
+    
+    .search-img:hover {
+        scale: 1.05;
+    }
+    
+    
+    .search-img:active {
+        scale: 0.95;
+    }
+    
+    #myImage {
+        margin-right: 0.2em;
+        cursor: pointer;
+        width: 2.5em;
+        height: 2.5em;
+    }
+    
+    #login {
+        font-size: 1.2em;
+        margin-right: 1em;
+        color: #98FF00;
+        margin-bottom: -0.3em;
+        text-shadow: 0 0 3px black, 0 0 5px #000000;
+        filter: brightness(150%);
+        filter: contrast(150%);
+        cursor: pointer;
+    }
+    
+    
+    
+    .clickable-img:hover {
+        scale: 1.05;
+        color: #fff;
+    
+    }
+    
+    
+    .modal,
+    .modal2 {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+        backdrop-filter: blur(10px);
+    
+    }
+    
+    .modal-content,
+    .modal-content2 {
+        background-color: #fefefe;
+        margin: 12% auto;
+        padding: 0 0.5em;
+        border: 1px solid #888;
+        width: 20em;
+    
+        font-size: 1.5em;
+        border-radius: 20px;
+        z-index: 1000;
+    }
+    
+    @media screen and (max-width:576px) {
+    
+        .modal-content,
+        .modal-content2 {
+            width: 80%;
+        }
+    }
+    
+    .links{
+        padding: 0;
+    }
+    .links div {
+        justify-content: space-between;
+    }
+    
+    .close-btn,
+    .close-btn2 {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+    
+    .close-btn:hover,
+    .close-btn:focus,
+    .close-btn2:hover,
+    .close-btn2:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
+    
+    .links li {
+        list-style: none;
+    }
+    
+    li:hover {
+        scale: 1.05;
+    
+    }
+    
+    
+    
+    .links .lin:hover {
+        background-color: #0033669c;
+    }
+    
+    .links .lin li {
+        color: black;
+        padding: 0.5em;
+    }
+    
+    
+    .links .lin li:hover {
+        width: 100%;
+        height: 100%;
+        text-align: right;
+        color: white;
+    }
+    
+    .links div div img {
+        padding: 0.5em;
+    
+    }
+    
+    .links div {
+        border-radius: 20px;
+        cursor: pointer;
+    }
+    
+    
+    
+    
+    .homeli,
+    .profileli,
+    .contact-usli,
+    .logoutli,
+    .estateli,
+    .reservationli,
+    .checkli {
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: row-reverse;
+        width: 100%;
+        padding: 0 0.5em;
+    
+    }
+    
+    .links div div {
+        width: 30px;
+        height: 30px;
+    
+    }
+    
+    .selects {
+        padding: 1.5em 0;
+        text-align: center;
+    }
+    
+    select {
+        font-size: 0.9em;
+        cursor: pointer;
+    
+    }
+    
+    .select0,
+    .select1,
+    .select2,
+    .select3 {
+        justify-content: space-between;
+        padding: 0.5em;
+    }
+    
+    #Aqar,
+    #city,
+    #Madena,
+    #Alser {
+        width: 90%;
+        height: 3em;
+        text-align: center;
+        align-items: center;
+        border-radius: 50px;
+    }
+    
+    @media screen and (max-width:576px) {
+    
+        #Aqar,
+        #city,
+        #Madena,
+        #Alser {
+            height: 2em;
+        }
+    }
+    
+    #Aqar:hover,
+    #city:hover,
+    #Madena:hover,
+    #Alser:hover {
+        background-color: #0033669c;
+        color: #ffffff;
+    }
+    
+    
+    .f{
+        overflow: hidden;
+      
+    }
+
+    /*=================== gallary ==================*/
+    .i{
+        width: 100%;
+        height: 5px;
+    }
+    .regnimgs{
+     position: relative;
+        margin: 7em 0em;
+        padding: 0 10em;
+        display: flex;
+        flex-wrap:wrap;
+        flex-direction: row-reverse;
+        align-items: center;
+        justify-content:space-around;
+        width: 100%;
+        
+    }
+
+   
+    .imgs{
+        width: 50em;
+        height: 28em;
+    }
+
+    @media screen and (max-width:1000px) {
+        .imgs{
+          width: 90%;
+        }
+        .regnimgs{
+            padding: 0;
+        }
+
+    }
+
+    .regbox{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: #003366; /* إذا لم يستطع المتصفح استخدام لون الخلفية المتدرج سيستخدم هذا */
+    background: linear-gradient(to left ,#003366 , gray);
+        justify-content: space-around;
+        height: auto;
+        width:20em ;
+        height: auto;
+        color: white;
+        border-radius: 1em;
+        padding: 15px 20px;
+        box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.25);
+
+
+
+    }
+    @media screen and (max-width:1435px) {
+.regbox{
+    flex-direction: row-reverse;
+    width: 50em;
+height: auto;
+margin-bottom: 1em;
+flex-wrap: wrap;}      
+    }
+
+    @media screen and (max-width:1000px) {
+        .regbox{
+            width: 90%;
+        }
+    }
+   
+    .regdetailsword{
+        font-size: 2em;
+    }
+    .cost{
+        font-size: 1.5em;
+        margin-top: 40px;
+    }
+    .regg{
+        padding: 0.5em 2em;
+        font-size: 1.3em;
+        cursor: pointer;
+        border-radius: 5px;
+        background-color: #98FF00;
+        border: 0 ;
+        margin-top: 20px;
+        margin-bottom: 20px;
+
+    }
+
+    @media screen and (max-width:1435px) {
+        .regg{
+            margin: 0;
+        }
+        .cost{
+            margin: 0;
+            
+        }
+    }
+    @media screen and (max-width:600px) {
+        .regdetailsword{
+            font-size:1.5em ;
+        }
+        .cost{
+            font-size: 1.3em;
+        }
+.regg{
+    padding: 0.5em 1em;
+    margin-top: 10px;
+}
+    }
+    .image-container {
+        height: 100%;
+        border: 2px solid #000;
+        position: relative;
+        overflow: hidden;
+        background-color: #fff;
+        border-radius: 20px;
+    }
+
+   
+
+
+
+    .btns{
+        display: flex;
+        justify-self: center;
+        margin: 1em 0;
+    gap: 30px;
+
+    }
+    
+    .btns .btn{
+    position: relative;
+    width: 60px;
+    height: 60px;
+    border: 2px solid #0033669c;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    }
+    
+    .btns .btn:active{
+        background-color: #0033669c;
+    }
+    
+    
+    .btns .btn::before{
+        content: ' ';
+        position: absolute;
+        width: 15px;
+        height: 15px;
+        border-top: 3px solid #0033669c;
+        border-right: 3px solid #0033669c;
+        transform: rotate(45deg) translate(-2.5px,2.5px);
+    }
+    
+    .btns .btn.prev::before{
+        transform: rotate(225deg) translate(-2.5px,2.5px);
+    
+    }
+    
+    .btns .btn:active:before{
+        border-top: 3px solid white;
+        border-right: 3px solid white;
+    }
+    
+   .image-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: none;
+    }
+
+    img.active {
+        display: block; /* عرض الصورة النشطة فقط */
+    }
+
+    /*=================== calendre ==================*/
+.calendar-title {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+
+.button {
+    display: block;
+   margin-right: 10px;
+    padding: 10px 20px;
+    background-color: #4a5159;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+.calendar-modal {
+    display: none;
+    position: fixed;
+    
+    transform: translate(-50%, -50%) scale(0.9);;
+    /* إذا لم يستطع المتصفح استخدام لون الخلفية المتدرج سيستخدم هذا */
+    
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 10000;
+    padding:5px 20px 20px 20px;
+    width: 50%;
+    top: 24em;
+    left: 50%;
+    height: auto;
+}
+
+@media screen and (max-width:1000px) {
+    .calendar-modal{
+        width: 80%;
+        
+    }
+}
+
+@media screen and (max-width:600px) {
+    .calendar-modal{
+        width: 90%;
+        
+    }
+}
+.click{
+    font-size: 1.2em;
+    display: flex;
+    flex-direction: row-reverse;
+}
+.month-year {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 10px 0 20px 0;
+    font-size: 1.5em;
+}
+.arrow {
+    cursor: pointer;
+    margin: 0 15px;
+    font-size: 1.5em;
+}
+.days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+    direction: rtl; /* ترتيب من اليمين إلى اليسار */
+}
+
+.day {
+    padding: 15px;
+    text-align: center;
+    color: white; /* لون الأرقام */
+    font-size: 1.2em; /* حجم الخط */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+@media screen and (max-width:600px) {
+    
+    .days{
+       width: auto;
+
+       gap: 5px;
+    }
+    
+
+}
+
+@media screen and (max-width:480px) {
+.day{
+    width: 40px;
+}
+}
+@media screen and (max-width:440px) {
+    .day{
+        width: 38px;
+    }
+    }
+
+.available {
+    color: #000;
+    background-color:#98FF00; /* لون الأيام المتاحة */
+    cursor: pointer;
+}
+.unavailable {
+    text-shadow: 0 0 3px black, 0 0 5px #000000;
+
+    background-color: gray; /* لون الأيام غير المتاحة مع زيادة الشدة */
+    pointer-events: none; /* عدم السماح بالنقر */
+}
+.selected {
+    background-color: aqua; /* اللون الرمادي عند الضغط */
+}
+.empty {
+    color: lightgray; /* لون الأيام الفارغة */
+}
+
+.cal_details        {
+    margin: 10px 5px;
+    display: flex;
+    flex-direction:column;
+    align-items: end;
+    font-size: 20px;
+    text-shadow: 0 0 3px black, 0 0 5px #000000;
+    
+}
+
+.av{
+    color: #98FF00;
+}
+.not-av{
+    color: gray;
+}
+.reg{
+    color: aqua;
+}
+.cal-buttons{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.close-button {
+    margin: 0 20px;
+    display: inline-block;
+    padding: 5px 20px;
+    background-color: red; /* لون زر الإغلاق */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 25px;
+    text-shadow: 0 0 3px black, 0 0 5px #000000;
+    border: 1px solid black;
+    
+}
+.cal-confirm-button {
+    margin: 0 20px;
+    display: inline-block;
+    padding: 5px 20px;
+    background-color: #03db35; /* لون زر التأكيد */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 25px;
+    text-shadow: 0 0 3px black, 0 0 5px #000000;
+    border: 1px solid black;
+}
+
+.overlay,.pop {
+    display: none;
+    margin-top: -3em;
+    position: fixed;
+    flex-direction: row;
+    width: 100%;
+    height: 110vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+@media screen and (max-width:1000px) {
+    
+}
+.weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    width: 100%;
+    margin-bottom: 10px;
+    text-shadow: 0 0 3px black, 0 0 5px #000000;
+    
+    direction: rtl; /* ترتيب من اليمين إلى اليسار */
+}
+.weekday {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 1em; /* حجم الخط لأيام الأسبوع */
+}
+@media screen and (max-width:480px) {
+    .weekday { font-size: 0.9em;
+}}
+
+.cost-conf{
+    font-size: 20px;
+}
+.cost-conf-num{
+    font-size: 25px;
+color: #003366;
+
+}
+.warning{
+    margin-top: 20px;
+    display: flex;
+     flex-direction: row-reverse;
+}
+.warning-word{
+    color: red;
+    font-size: 25px;
+     padding: 5px;
+}
+.warning-text{
+    display: flex;
+
+    align-items: center;
+}
+.pop {
+    display: none; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 110vh;
+    background-color: rgba(0, 0, 0, 0.7); 
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; 
+}
+
+@media screen and (max-width:576px) {
+    .pop-content{
+        width: 90%;
+    }
+    
+}
+.pop-content {
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    
+}
+
+.pop-buttons {
+    margin: 1.5em auto;
+    display: flex;
+    justify-content: center;
+    gap:3em ;
+}
+
+.pop-content h2{
+   font-family: sans-serif;
+}
+
+#conf,#cancel,#close-success{
+cursor: pointer;
+    font-family: 'Cairo', sans-serif;
+width: 10em;
+height: 4em;
+border-radius:8px ;
+}
+
+
+#conf{
+    background-color: #98FF00;
+}
+
+#cancel{
+    background-color: red;
+}
+
+#conf:hover{
+    background-color: #c0e38c;
+}
+
+#cancel:hover{
+    background-color: rgb(212, 130, 130);
+}
+
+#close-success{
+    font-size: 0.8em;
+}
+
+#close-success:hover{
+   background-color: #565656;
+   color: white;
+}
+/*=================== table ==================*/
+
+.info{position: relative;
+    display: flex;
+    justify-content: center;
+    padding: 0 10em;
+width: 100%;
+
+}
+
+@media screen and (max-width:1000px) {
+    .info {
+        padding: 0;
+    }
+}
+.info-table{
+    width:90%;
+    text-align: center;
+    font-size: 1.2em;
+    border-collapse: collapse;
+  
+}
+
+.header-row th,
+.data-row td {
+    padding: 5px 0;
+
+}
+/*
+.header-row th{
+    background-color: rgb(70, 150, 255);
+color: black;
+}
+*/
+
+.h{
+    border-bottom-left-radius: 20px;
+    border-top-right-radius: 20px;
+    letter-spacing: 2px;
+    color: #98FF00;
+    font-size: 1.3em;
+    
+}
+.star-table-place{   
+}
+.stars-table{
+    display: flex;
+    justify-content: center;
+    height: 25px;
+    align-items: center;
+}
+
+
+.star-table{
+    display: block;
+    color: yellow;
+    font-size: 40px;
+    margin-right: 5px;
+}
+.l{
+    border-bottom-left-radius: 20px;
+   
+}
+
+.r{
+    border-top-right-radius: 20px;
+
+}
+.info-table tr:nth-child(odd) {
+    background: #003366; /* إذا لم يستطع المتصفح استخدام لون الخلفية المتدرج سيستخدم هذا */
+    background: linear-gradient(to left ,#003366 , gray);
+    color: white;
+    font-size: 18px;
+}
+.info-table tr:nth-child(even) {
+    display: block;
+height: 2px;
+
+}
+
+
+/*=================== more info ==================*/
+.more-info  {
+    text-align: right;
+    padding: 0 10em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 2em 0;
+}
+
+.more-info h2{
+    align-self: flex-end;
+    margin-right: 5%;
+}
+.more-info-box{
+    background: #003366; /* إذا لم يستطع المتصفح استخدام لون الخلفية المتدرج سيستخدم هذا */
+    background: linear-gradient(to left ,#003366 , gray);
+width: 90%;
+margin: 0;
+padding: 0;
+    color: white;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.25);
+    z-index: -1;
+}
+
+
+@media screen and (max-width:1000px) {
+    .more-info {
+        padding: 0 ;
+    }
+    .more-info-box{
+    }
+}
+.more-info-list{
+    list-style-type: none;
+}
+
+.more-info-list li {
+    position: relative; 
+    padding-right: 20px; 
+    margin: 10px 0; 
+    font-size: 20px;
+}
+.more-info-list li:hover {
+  scale: 1;
+}
+.more-info-list li::before {
+    content: '•'; 
+    position: absolute; 
+    right: 0; 
+    color: white; 
+    margin-right: 5px;
+}
+/*=================== rate ==================*/
+.heart {
+    font-size: 50px;
+    color: rgb(202, 195, 195);
+    cursor: pointer;
+    transition: color 0.3s ease;
+    margin-left: -10px;
+}
+.heart.red {
+    color: red;
+}
+
+.rate  {
+    text-align: right;
+    padding: 0 10em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 2em 0;
+    
+}
+
+.rate h2{
+    align-self: flex-end;
+    margin-right: 5%;
+}
+
+@media screen and (max-width:1000px) {
+    .rate {
+        padding: 0 ;
+    }
+}
+
+.rate-box{
+    background: #003366; /* إذا لم يستطع المتصفح استخدام لون الخلفية المتدرج سيستخدم هذا */
+    background: linear-gradient(to left ,#003366 , rgba(9, 9, 9, 0.958));
+
+width: 90%;
+margin: 0 ;
+padding: 0 20px;
+box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.25);
+
+    color: white;
+    border-radius: 20px;
+}
+
+@media screen and (max-width:450px) {
+.rate-box{
+    padding: 0 10px;}
+
+}
+.stars-container {
+    margin: 10px;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    border-bottom: 3px solid #ccc;
+    flex-wrap: wrap;
+}
+.stars{
+    display: flex;
+    align-items: center;
+}
+
+
+.star {
+    font-size: 50px;
+    cursor: pointer;
+    color: rgb(202, 195, 195);
+}
+
+.selected-star {
+    color: gold;
+}
+.confirm-button {
+    background-color: #98FF00;
+    border: none;
+    padding: 10px 20px;
+    font-size: 20px;
+    cursor: pointer;
+    margin-right: 20px; /* مسافة بين الزر والنجوم */
+    border-radius: 5px;
+}
+@media screen and (max-width:450px) {
+    .star{
+       font-size: 40px;
+    }
+    .confirm-button{
+        margin-right: 10px;
+        font-size: 16px;
+        margin-left: 0;
+    }
+}
+
+.mycomment{
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+justify-content:space-between;
+margin-top: -70px;
+padding: 0 5px;
+}
+.comment-profile-img,.my-comment-profile-img{
+    width: 5em;
+    height:5em ;
+}
+
+.my-comment-profile-img{
+    margin-right: -18px;
+}
+
+
+
+.comment-input {
+    margin-top: 20px;
+    text-align: end;
+    width: 100%;
+    padding: 10px 70px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    resize: none; /* منع تغيير حجم المربع */
+    height: 40px; /* ارتفاع محدد */
+    overflow: hidden; /* إخفاء المحتوى الزائد */
+}
+
+.send-icon{
+     z-index: 2;
+     cursor: pointer;
+ }
+
+
+.comments{
+    margin: 20px 0;
+    margin-bottom: 0;
+}
+
+.comments-section-section{
+    padding:0 0 20px 0;
+}
+
+.othercomments{
+   border-bottom: 1px solid gray;
+   border-top: 1px solid gray;
+
+   padding-bottom: 20px;
+}
+
+.other-imgnname{
+    display: flex;
+    flex-direction: row-reverse;
+   align-items: center;
+
+}
+
+.comment-profile-img{
+    margin-right: -11px;
+}
+
+.oth-name{
+color: white;
+border: 2px solid rgb(70, 150, 255);;
+height: 40px;
+padding: 5px 20px;
+border-radius: 20px;
+margin-right: -25px;
+}
+.oth-text{
+    background-color: white;
+    color: black;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+width: 100%;
+
+
+}
+
+.endline {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 7em;
+    margin-top: 3em;
+    position: absolute;
+    color: black;
+    background: #003366; /* إذا لم يستطع المتصفح استخدام لون الخلفية المتدرج سيستخدم هذا */
+    background: linear-gradient(to bottom ,#003366 , gray);
+    box-shadow: 2px 2px 10px 3px black, -2px -2px 10px 3px black;
+
+}
+
+.infa {
+    width: 15em;
+    display: flex;
+    justify-content: space-between;
+}
+
+#insta,
+#facebook {
+    cursor: pointer;
+    width: 4em;
+}
+
+h5 {
+    margin: 0.2em;
+    color: white;
+}
+
+.regbox{    background: linear-gradient(to left ,#003366 , rgba(9, 9, 9, 0.958));
+}
+ .info-table tr:nth-child(odd) {    background: linear-gradient(to left ,#003366 , rgba(9, 9, 9, 0.958));
+ }
+.more-info-box{    background: linear-gradient(to left ,#003366 , rgba(9, 9, 9, 0.958));
+}
+ .rate-box{    background: linear-gradient(to left ,#003366 , rgba(9, 9, 9, 0.958));
+ }
+ .endline{
+    background: linear-gradient(to left ,#003366 , rgba(9, 9, 9, 0.958));
+
+ }
+
+ .oth-name{
+    background: linear-gradient(to left ,#003366 , rgba(9, 9, 9, 0.958));
+
+ }
+
+.calendar-modal {
+    background: linear-gradient(to bottom left ,#003366 , rgba(9, 9, 9, 0.958));
+
+}
+
+    /*=================== movement ==================*/
+    .info-table tbody tr {
+        opacity: 0; /* جعل الصفوف غير مرئية في البداية */
+        transform: translateX(-100px); /* بدء الحركة من اليسار */
+        transition: opacity 0.5s ease, transform 0.5s ease; /* زيادة مدة الانتقال إلى 0.5 ثانية */
+    }
+    
+    .info-table tbody tr.visible {
+        opacity: 1; /* جعل الصف مرئي */
+        transform: translateX(0); /* إنهاء الحركة */
+    }
+
+    .more-info-box {
+        opacity: 0; /* جعل العنصر غير مرئي في البداية */
+        transform: translateY(50px); /* بدء الحركة من الأسفل */
+        transition: opacity 0.5s ease, transform 0.5s ease; /* تأثير الانتقال */
+    }
+    
+    .more-info-box.visible {
+        opacity: 1; /* جعل العنصر مرئي */
+        transform: translateY(0); /* إنهاء الحركة */
+    }
+
+    .rate-box {
+        opacity: 0; /* جعل العنصر غير مرئي في البداية */
+        transform: translateY(50px); /* بدء الحركة من الأسفل */
+        transition: opacity 0.5s ease, transform 0.5s ease; /* تأثير الانتقال */
+    }
+    
+    .rate-box.visible {
+        opacity: 1; /* جعل العنصر مرئي */
+        transform: translateY(0); /* إنهاء الحركة */
+    }
+
+    .endline {
+        opacity: 0; /* جعل العنصر غير مرئي في البداية */
+        transform: translateY(50px); /* بدء الحركة من الأسفل */
+        transition: opacity 0.5s ease, transform 0.5s ease; /* تأثير الانتقال */
+    }
+    
+    .endline.visible {
+        opacity: 1; /* جعل العنصر مرئي */
+        transform: translateY(0); /* إنهاء الحركة */
+    }

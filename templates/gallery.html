@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+{% load static %}
+{% load crispy_forms_tags %}
+<!--the gallery test-->
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="{% static 'main-styles1.css' %}">
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri&display=swap" rel="stylesheet">
+    <link rel="icon" href="{% static 'Images and icons/—Pngtree—village house logo real estate_3628984.png' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main</title>
+</head>
+
+<body>
+    <section class="top-bar">
+          <div class="left-options">
+            <div class="logo">
+                <img class="logo-img" id="limg" src="{% static 'photos/AVARLOGO.svg' %}" alt="logo-img">
+                <img class="small-logo" alt="small-logo" src="{% static 'photos/avarsmalllogo .svg' %}">
+            </div>
+        </div>
+        <div class="right-options">
+            {% if not user.is_authenticated %}
+            <a href="{% url 'home:login' %}" id="login">تسجيل الدخول </a>
+            {% else %}
+
+             <a href="{% url 'home:newres' %}" id="login">اضافة عقار</a>
+            {% endif %}
+
+            <img class="search-img" src="{% static 'photos/ser.png' %}" id="mySearch" alt="search-img">
+            <img class="clickable-img" src="{% static 'photos/men.png' %}" id="myImage" alt="menu-img">
+        </div>
+
+        </script>
+
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn">&times;</span>
+                <ul class="links">
+                   <a href="{% url 'home:main' %}">
+                    <div class="homeli lin">
+                        <li>الصفحة الرئيسية</li>
+                        <div class="ll1"><img class="home-img" src="{% static 'photos/home-page.png' %}" alt="home-img"></div>
+                    </div>
+                       </a>
+                    <a href="{% url 'home:myprofile' %}">
+                             <div class="profileli lin ">
+                                 <li>الملف الشخصي</li>
+                            <div class="ll1"><img class="profile-img" src="{% static 'photos/male-user.png' %}" alt="profile-img"></div>
+                         </div>
+                    </a>
+                    <a href="{% url 'home:myprofile' %}?filter=عقاراتي ">
+                    <div class="estateli lin ">
+                       <li> عقاراتي</li>
+                        <div class="ll2"><img class="estate-img" src="{% static 'photos/real-estate.png' %}" alt="estate-img"></div>
+                    </div>
+                    </a>
+                    <a href="{% url 'home:myprofile' %}?filter=حجوزاتي">
+                        <div class="reservationli lin">
+                            <li> حجوزاتي</li>
+                                <div class="ll2"><img class="reservation-img" src="{% static 'photos/reservation.png' %}"
+                                alt="reservation-img"></div>
+                        </div>
+                    </a>
+                    <a href="{% url 'home:gallery' %}">
+                         <div class="checkli lin">
+                                <li>احجز الان</li>
+                            <div class="ll2"><img class="check-img" src="{% static 'photos/check-book.png' %}" alt="check-img"></div>
+                         </div>
+                    </a>
+                    <a href="{% url 'home:help' %}">
+                         <div class="contact-usli lin">
+                                <li>تواصل معنا</li>
+                             <div class="ll3"><img class="contact-img" src="{% static 'photos/contact-us.png' %}" alt="contact-img"></div>
+                            </div>
+                    </a>
+                   {% if user.is_authenticated %}
+                    <a href="{% url 'home:logout' %}">
+                    <div class="logoutli lin">
+                            <li>تسجيل الخروج</li>
+                                <div class="ll4"><img class="logout-img" src="{% static 'photos/logout.png' %}" alt="logout-img"></div>
+                            </div>
+                    </a>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+      <div id="myModal2" class="modal2">
+    <div class="modal-content2">
+        <span class="close-btn2">&times;</span>
+        <form class="selects" method="GET"> <!--div to form-->
+                            {% csrf_token %}
+
+        <div class="selects">
+            <div class="select0">
+                <select name="Aqar" id="Aqar" required>
+                    <option value="">اختيار نوع العقار</option>
+                    <option value="مزارع">مزارع</option>
+                    <option value="شقة">شقق</option>
+<!--                    <option value="">مسابح</option>-->
+                    <option value="فيلا">فيلات</option>
+                </select>
+            </div>
+            <div class="select1">
+                <select name="city" id="city" required>
+                    <option value="">اختيار محافظة</option>
+                    <option value="ادلب">ادلب</option>
+                    <option value="حلب">حلب</option>
+                    <option value="دمشق">دمشق</option>
+                    <option value="ريف دمشق">ريف دمشق</option>
+                    <option value="حماه">حماه</option>
+                    <option value="حمص">حمص</option>
+                    <option value="درعا">درعا</option>
+                    <option value="القنيطرة">القنيطرة</option>
+                    <option value="السويداء">السويداء</option>
+                    <option value="دير الزور">دير الزور</option>
+                    <option value="الرقة">الرقة</option>
+                    <option value="الحسكة">الحسكة</option>
+                    <option value="اللاذقية">اللاذقية</option>
+                    <option value="طرطوس">طرطوس</option>
+                </select>
+            </div>
+            <div class="select2">
+                <select name="Madena" id="Madena" required>
+                    <option value="">اختيار مدينة أو بلدة</option>
+                </select>
+            </div>
+            <div class="select3">
+                <select name="Alser" id="Alser" required>
+                    <option value="">اختيار الحد الاعلى</option>
+                    <option value="50">50$</option>
+                    <option value="100">100$</option>
+                    <option value="150">150$</option>
+                    <option value="200">200$</option>
+<!--                    <option value="">250$</option>-->
+<!--                    <option value="">300$</option>-->
+<!--                    <option value="">350$</option>-->
+<!--                    <option value="">400$</option>-->
+<!--                    <option value="">450$</option>-->
+<!--                    <option value="">500$</option>-->
+<!--                    <option value="">600$</option>-->
+<!--                    <option value="">700$</option>-->
+<!--                    <option value="">800$</option>-->
+<!--                    <option value="">900</option>-->
+<!--                    <option value="">1000$</option>-->
+                </select>
+            </div>
+             <input type="submit" value=" بحث " class="ser">  <!--new button-->
+    </div>
+
+            </form> <!--div to form-->
+        </div>
+      </div>
+</div>
+
+<script>
+var towns = {{ towns|safe }};
+document.getElementById('city').addEventListener('change', function() {
+    var city = this.value;
+    var madenaSelect = document.getElementById('Madena');
+    madenaSelect.innerHTML = '<option value="">اختيار مدينة أو بلدة</option>';
+    if (city in towns) {
+        towns[city].forEach(function(town) {
+            madenaSelect.innerHTML += '<option value="' + town + '">' + town + '</option>';
+        });
+    }
+});
+</script>
+
+
+        <script>
+            var modal2 = document.getElementById('myModal2');
+
+            // Get the image and insert it inside the modal
+            var img2 = document.getElementById('mySearch');
+            var modalContent2 = document.querySelector('.modal-content2');
+
+            // Get the <span> element that closes the modal
+            var closeBtn2 = document.querySelector('.close-btn2');
+
+            // When the user clicks the image, open the modal
+            img2.onclick = function () {
+                modal2.style.display = 'block';
+            }
+
+            // When the user clicks on <span> (x), close the modal
+            closeBtn2.onclick = function () {
+                modal2.style.display = 'none';
+            }
+
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function (event1) {
+                if (event1.target == modal2) {
+                    modal2.style.display = 'none';
+                }
+            }
+        </script>
+        <script src="{% static 'detailsmain.js' %}"></script>
+    </section>
+
+    <div class="big-space">
+
+    </div>
+
+    <div class="middle-bar">
+        <ul id="mid-options" class="mid-options">
+            {% if filter == 'all' %}
+            <a href="?filter=all" id="all"> <li class="item all"> الكل </li></a>
+            {% else %}
+            <a href="?filter=all" id="all"> <li class="item houses"> الكل </li></a>
+            {% endif %}
+
+             {% if filter == 'شقة' %}
+            <a href="?filter=شقة" id="شقة"> <li class="item all"> منازل </li></a>
+            {% else %}
+            <a href="?filter=شقة" id="شقة"> <li class="item houses"> منازل </li></a>
+            {% endif %}
+
+             {% if filter == 'مزارع' %}
+            <a href="?filter=مزارع" id="مزارع"> <li class="item all"> مزارع </li></a>
+            {% else %}
+            <a href="?filter=مزارع" id="مزارع"> <li class="item houses"> مزارع </li></a>
+            {% endif %}
+
+             {% if filter == 'فيلا' %}
+            <a href="?filter=فيلا" id="فيلا"> <li class="item all"> فيلات </li></a>
+            {% else %}
+            <a href="?filter=فيلا" id="فيلا"> <li class="item houses"> فيلات </li></a>
+            {% endif %}
+<!--            {% if filter == 'popular' %}-->
+<!--            <a href="?filter=all" id="الشائع"> <li class="item all"> الشائع </li></a>-->
+<!--            {% else %}-->
+<!--            <a href="?filter=all" id="الشائع"> <li class="item houses"> الشائع </li></a>-->
+<!--            {% endif %}-->
+
+<!--            <a href="?filter=شقة" id="شقة"> <li class="item houses"> منازل </li></a>-->
+<!--            <a href="?filter=مزارع" id="مزارع"> <li class="item farms"> مزارع </li></a>-->
+<!--            <a href="?filter=فيلا" id="فيلا"> <li class="item pools"> فيلات </li></a>-->
+            <a href="?filter=all" id="الشائع"> <li class="item famous"> الشائع </li></a>
+
+
+        </ul>
+    </div>
+    <div class="cards">
+        {% for x in realEstates %}
+        <a href="{% url 'home:resProfile' x.slug %}">
+            <div class="card">
+
+                <div class="card-img"><img src="{{x.main_image.url}}" alt="card-img"
+                        class="intre-img">
+                </div>
+
+                <div class="card-details">
+                    <div class="type">
+                        {% if x.type == 'مزرعة' %}
+                        <div class="type-title">مزرعة</div>
+                        <div class="mz"></div>
+                        {% endif %}
+                         {% if x.type == 'فيلا' %}
+                        <div class="type-title">فيلا</div>
+                        <div class="ms"></div>
+                        {% endif %}
+
+
+                        {% if x.type == 'شقة' %}
+                        <div class="type-title">شقة</div>
+                        <div class="sh"></div>
+                        {% endif %}
+                    </div>
+                    <div class="details">
+                        <h3 class="location">{{x.address}},{{x.town}}</h3>
+                        <div class="price">
+                        <h3 class="numper">  ب {{x.price}} دولار   </h3>
+                             <div class="in">{{x.time}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+        {% endfor %}
+
+    </div>
+
+    <footer class="endline">
+        <h5>تفاصيل عنا</h5>
+        <div class="infa">
+            <img src="{% static 'photos\facebook.png' %}" alt="facebook" id="facebook">
+            <img src="{% static 'photos\instagram.png' %}" alt="insta" id="insta">
+        </div>
+
+
+    </footer>
+
+
+
+    <script src="{% static 'main-script.js' %}"></script>
+
+</body>
+
+</html>

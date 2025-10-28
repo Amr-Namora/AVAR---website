@@ -1,0 +1,594 @@
+* {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+
+    cursor: context-menu;
+
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Cairo', sans-serif;
+    width: 100%;
+}
+
+
+.top-bar {
+    width: 100%;
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    height: 5em;
+    background-color: #4e748792;
+    z-index: 10;
+    color: #003366;
+    padding: 0 5em;
+}
+
+@media screen and (max-width:1000px) {
+    .top-bar {
+        padding: 0;
+    }
+}
+
+.logo-img {
+
+    width: 6em;
+    height: 5em;
+    filter: brightness(180%);
+    filter: contrast(200%);
+    margin-top: -0.4em;
+}
+
+.title {
+    justify-content: space-around;
+    text-align: center;
+    font-family: 'Amiri', serif;
+    margin-top: -1.3em;
+
+}
+
+
+#sleep {
+    color: #02025E;
+    font-size: 1.4em;
+    margin-bottom: 0;
+}
+
+#ertah {
+    font-size: 1.4em;
+    color: #02025E;
+    margin-top: -1.7em;
+}
+
+#w {
+    color: #98FF00;
+    font-size: 1.7em;
+    text-shadow: 0 0 3px black, 0 0 5px #000000;
+    filter: brightness(150%);
+    filter: contrast(150%);
+    margin-top: -1em;
+
+}
+
+.left-options {
+    display: flex;
+}
+
+.right-options {
+    display: flex;
+    align-items: center;
+    height: 5em;
+}
+
+.search-img {
+    margin-right: 0.8em;
+    cursor: pointer;
+    width: 3em;
+    height: 3em;
+}
+
+.search-img:hover {
+    scale: 1.05;
+}
+
+
+.search-img:active {
+    scale: 0.95;
+}
+
+#myImage {
+    margin-right: 0.2em;
+    cursor: pointer;
+    width: 3em;
+    height: 3em;
+}
+
+#login {
+    font-size: 1.2em;
+    margin-right: 1em;
+    color: #98FF00;
+    margin-bottom: -0.3em;
+    text-shadow: 0 0 3px black, 0 0 5px #000000;
+    filter: brightness(150%);
+    filter: contrast(150%);
+    cursor: pointer;
+}
+
+
+
+.clickable-img:hover {
+    scale: 1.05;
+    color: #fff;
+
+}
+
+
+.modal,
+.modal2 {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+
+}
+
+.modal-content,
+.modal-content2 {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 0 0.5em;
+    border: 1px solid #888;
+    width: 20em;
+
+    font-size: 1.5em;
+    border-radius: 20px;
+    z-index: 1000;
+}
+
+@media screen and (max-width:576px) {
+
+    .modal-content,
+    .modal-content2 {
+        width: 80%;
+    }
+}
+
+.links{
+    padding: 0;
+}
+.links div {
+    justify-content: space-between;
+}
+
+.close-btn,
+.close-btn2 {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-btn:hover,
+.close-btn:focus,
+.close-btn2:hover,
+.close-btn2:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+li {
+    list-style: none;
+}
+
+li:hover {
+    scale: 1.05;
+
+}
+
+
+
+.links .lin:hover {
+    background-color: #0033669c;
+
+}
+
+.links .lin li {
+    color: black;
+    padding: 0.5em;
+}
+
+
+.links .lin li:hover {
+    width: 100%;
+    height: 100%;
+    text-align: right;
+    color: white;
+}
+
+.links div div img {
+    padding: 0.5em;
+
+}
+
+.links div {
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+
+.homeli,
+.profileli,
+.contact-usli,
+.logoutli,
+.estateli,
+.reservationli,
+.checkli {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row-reverse;
+    width: 100%;
+    padding: 0 0.5em;
+
+}
+
+.links div div {
+    width: 30px;
+    height: 30px;
+
+}
+
+.selects {
+    padding: 1.5em 0 0 0;
+    text-align: center;
+    justify-content: center;
+}
+
+select {
+    font-size: 0.9em;
+    cursor: pointer;
+
+}
+
+.select0,
+.select1,
+.select2,
+.select3 {
+    justify-content: space-between;
+    padding: 0.5em;
+}
+
+#Aqar,
+#city,
+#Madena,
+#Alser {
+    width: 90%;
+    height: 3em;
+    text-align: center;
+    align-items: center;
+    border-radius: 50px;
+}
+
+.ser{
+width: 50%;
+    height: 2em;
+    border-radius: 20px;
+    background-color: #91ABCE;
+    color: black;
+    cursor: pointer;
+    font-family: 'Cairo', sans-serif;
+    font-size: 1em;
+    margin: 1em auto;
+   
+}
+
+@media screen and (max-width:576px) {
+
+    #Aqar,
+    #city,
+    #Madena,
+    #Alser {
+        height: 2em;
+    }
+}
+
+.ser:hover,
+#Aqar:hover,
+#city:hover,
+#Madena:hover,
+#Alser:hover {
+    background-color: #0033669c;
+    color: #ffffff;
+}
+
+/* ===============BOOOK==================*/
+
+.main {
+    display: flex;
+    flex-direction: row;
+
+}
+
+.right {
+    margin-top: 100px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-left: 40%;
+    height: 40em;
+
+}
+
+
+
+.right-box {
+    background-color: #91ABCE;
+    box-shadow: 0px 0px 50px 40px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    max-width: 30em;
+}
+
+
+
+.house {
+    position: absolute;
+    height: 50em;
+    z-index: -1;
+    object-fit: cover;
+    width: 60%;
+}
+
+.details {
+    padding: 0 2em;
+    font-size: 1.1em;
+}
+
+.right-box h2 {
+    margin-bottom: 0.2em;
+}
+
+.filtr {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1em 0;
+    gap: 1em;
+}
+
+.filtr select {
+    border-radius: 20px;
+    font-size: 1.1em;
+    width: 90%;
+    height: 3em;
+    background: #D9D9D9;
+    border-radius: 10px;
+    text-align: right;
+    color: #565656
+}
+
+
+
+   
+    textarea {
+        text-align: right;
+        background-color: #D9D9D9;
+        width: 90%;
+       font-size: larger;
+        height: 7em;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        resize: none;
+    }
+
+    #location-input{
+      text-align: right;
+        background-color: #D9D9D9;
+        width: 90%;
+       font-size: larger;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        resize: none;
+   height: 50px;
+}
+
+
+.submit {
+    width: 9em;
+    height: 3em;
+    border-radius: 20px;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    font-family: 'Cairo', sans-serif;
+
+}
+
+.submit:hover {
+    background-color: rgb(44, 42, 42);
+
+
+}
+
+.pop {
+    display: none; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); 
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; 
+}
+
+@media screen and (max-width:576px) {
+    .pop-content{
+        width: 90%;
+    }
+    
+}
+.pop-content {
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    
+}
+
+.pop-buttons {
+    margin: 1.5em auto;
+    display: flex;
+    justify-content: center;
+    gap:3em ;
+}
+
+.pop-content h2{
+   font-family: sans-serif;
+}
+
+#conf,#cancel,#close-success{
+cursor: pointer;
+    font-family: 'Cairo', sans-serif;
+width: 10em;
+height: 4em;
+border-radius:8px ;
+}
+
+
+#conf{
+    background-color: #98FF00;
+}
+
+#cancel{
+    background-color: red;
+}
+
+#conf:hover{
+    background-color: #c0e38c;
+}
+
+#cancel:hover{
+    background-color: rgb(212, 130, 130);
+}
+
+#close-success{
+    font-size: 0.8em;
+}
+
+#close-success:hover{
+   background-color: #565656;
+   color: white;
+}
+
+.photo {
+    margin-top: -12em;
+    align-self: flex-start;
+}
+
+@media screen and (max-width:1100px) {
+    .photo {
+        margin-left: -8em;
+    }
+}
+
+
+.endline {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 7em;
+    margin-top: 3em;
+    position: absolute;
+    color: black;
+    background: #34495E;
+    box-shadow: 2px 2px 10px 3px black, -2px -2px 10px 3px black;
+
+}
+
+
+.infa {
+    width: 15em;
+    display: flex;
+    justify-content: space-between;
+}
+
+#insta,
+#facebook {
+    cursor: pointer;
+    width: 4em;
+}
+
+h5 {
+    margin: 0.2em;
+    color: white;
+}
+
+
+@media screen and (max-width:1000px) {
+
+
+
+
+    .house {
+        display: none;
+    }
+
+    .main {
+        width: 100%;
+        flex-direction: column;
+        height: 100%;
+        margin: 0;
+        padding: 5em 0 1em 0;
+
+    }
+
+    .right {
+        flex-direction: column-reverse;
+        margin: 0;
+        height: 100%;
+
+    }
+
+    .right-box {
+        margin: 0;
+        padding: 0;
+    }
+
+    .endline {
+        position: relative;
+        margin: 0;
+
+    }
+
+    .photo {
+        margin: 0;
+        align-self: center;
+    }
+
+    #login {
+        font-size: 0.9em;
+    }
+}
+

@@ -1,0 +1,201 @@
+body {
+
+
+    font-family: 'Cairo', sans-serif;
+    padding: 0;
+    margin: 0;
+    font-size: 25px;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    scrollbar-color: #003366;
+    background: url(photos/1.jpg);
+    background-size: cover;
+    background-repeat:repeat;
+    justify-content: center;
+    align-items: center;
+    scrollbar-color: #003366;
+
+}
+
+
+
+.mid {
+    width: 20em;
+    height: auto;
+    text-align: center;
+    margin: 5% auto;
+    background: #eaeaec;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 50px;
+    font-family: 'Cairo', sans-serif;
+    padding: 60px;
+    padding-top: 40px;
+
+}
+
+.text {
+    border: 0;
+    padding: 0;
+    text-align: center;
+    color: #000000;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.logo {
+    font-family: 'Cairo', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    background-color: #0f262b00;
+    border: 0;
+    font-size: 25px;
+    text-shadow: 0 0 1px black, 0 0 1px #000000;
+    text-align: center;
+}
+
+#logoimg {
+    width: 150px;
+    height: 150px;
+    
+}
+
+#title {
+    justify-content: space-around;
+    text-align: center;
+    font-family: 'Amiri', serif;
+}
+
+#sleep, #ertah {
+    color: #003366;
+    font-size: 2vw;
+    margin: 0;
+}
+
+#w {
+    color: #A3D95B;
+    font-size: 2vw;
+    margin: 0;
+    
+}
+
+#name, #pass ,#conferm , #phone , #cityy , #year ,#US {
+    color: #000000;
+    text-align: right;
+    margin-top: 10px;
+}
+
+#username, #password , #conferm_password , #phone_num , #city , #birth , #us{
+    text-align: right;
+    width: 100%;
+    height: 40px;
+    background: white;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 50px;
+    margin-top: 10px;
+    padding: 0 10px;
+}
+#phone_num{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+#city , #us{
+    font-size: smaller;
+
+}
+
+select option{
+    text-align: center;
+    background-color:#eaeaec ;   
+
+}
+
+
+
+#button1 {
+    justify-content: center;
+    width: 50%;
+    height: 40px;
+    background: #003366;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 50px;
+    color: #FFFFFF;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+
+@media (max-width: 1100px) {
+    .mid{
+        font-size: 32pxpx ;
+    }
+}
+@media (max-width: 1000px) {
+    .mid{
+        font-size: 30px ;
+    }
+    #logoimg {
+        width: 130px;
+        height: 130px;
+    }
+}
+@media (max-width: 900px) {
+    .mid{
+        width: 70%;
+        font-size: 27px ;
+    }
+    #logoimg {
+        width: 150px;
+        height: 150px;
+    }
+}
+@media (max-width: 768px) {
+    .mid {
+        width: 80%;
+        height: auto;
+        font-size: 25px;
+        padding: 50px;
+    }
+
+    #logoimg {
+        width: 130px;
+        height: 130px;
+    }
+
+
+    #button1 {
+        width: 70%;
+    }
+    select option{
+        max-width: 200px;
+    }
+    
+}
+
+@media (max-width: 480px) {
+    .mid {
+        width: 80%;
+        font-size: 20px;
+        margin: 5% auto;
+        padding: 40px;
+    }
+
+    #logoimg {
+        width: 120px;
+        height: 120px;
+    }
+    #username, #password , #conferm_password , #phone_num , #city , #birth , #us{
+        height: 30px;
+    }
+
+    #button1 {
+        width: 80%;
+        height: 32px;
+    }
+    select option{
+        max-width: 100px;
+    }
+    
+}

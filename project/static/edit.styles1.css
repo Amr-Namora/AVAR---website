@@ -1,0 +1,206 @@
+html{
+    height: auto;
+}
+
+
+body {
+
+
+    font-family: 'Cairo', sans-serif;
+    padding: 0;
+    margin: 0;
+    font-size: 25px;
+    height: auto;
+    scrollbar-color: #003366;
+    background: url(photos/b.jpg) no-repeat;
+    background-size: cover;
+    justify-content: center;
+    align-items: center;
+    scrollbar-color: #003366;
+    background-position:bottom ;
+
+}
+
+
+
+.mid {
+    margin: 2em auto 5em auto;
+    width: 20em;
+    max-width: 25em;
+    height: auto;
+    text-align: center;
+    background: #eaeaec;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 50px;
+    font-family: 'Cairo', sans-serif;
+    padding: 40px;
+    padding-top: 30px;
+}
+
+@media screen and (max-width:576px) {
+    .mid{
+        width: 90%;
+    }
+}
+
+.text {
+    font-size: 1.3em;
+    margin: 0em auto 1em auto;
+    border: 0;
+    padding: 0;
+    text-align: center;
+    color: #000000;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.logo {
+    font-family: 'Cairo', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0f262b00;
+    border: 0;
+    font-size: 25px;
+    text-shadow: 0 0 1px black, 0 0 1px #000000;
+    text-align: center;
+    margin: 1em auto;
+
+}
+
+#logoimg {
+  
+  width: 150px;
+  height: 150px;
+}
+
+#title {
+    justify-content: space-around;
+    text-align: center;
+    font-family: 'Amiri', serif;
+    padding-right: 1em;
+}
+
+#sleep {
+    color: #02025E;
+    font-size: 1.4em;
+    margin-bottom: 0;
+}
+
+#ertah {
+    font-size: 1.4em;
+    color: #02025E;
+    margin-top: -0.2em;
+}
+
+#w {
+    margin-top: -0.5em;
+
+    color: #98FF00;
+    font-size: 1.7em;
+    text-shadow: 0 0 3px black, 0 0 5px #000000;
+    filter: brightness(150%);
+    filter: contrast(150%);
+
+}
+
+#name, #pass ,#conferm , #phone {
+    color: #000000;
+    text-align: right;
+    margin-top: 10px;
+}
+
+#username, #password , #conferm_password , #phone_num {
+    text-align: right;
+    width: 100%;
+    height: 40px;
+    background: white;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 50px;
+    margin-bottom: 0.5em;
+    margin-top: 10px;
+    padding: 0 10px;
+}
+#phone_num{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+select option{
+    text-align: center;
+    background-color:#eaeaec ;   
+
+}
+
+
+.but {
+    justify-content: center;
+    width: 50%;
+    height: 40px;
+    background: #003366;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 50px;
+    color: #FFFFFF;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.but:hover{
+    background: #16497c;
+
+}
+
+
+
+@media (max-width: 1100px) {
+    .mid{
+        font-size: 32pxpx ;
+    }
+}
+@media (max-width: 1000px) {
+    .mid{
+        font-size: 30px ;
+    }
+    #logoimg {
+        width: 130px;
+        height: 130px;
+    }
+}
+@media (max-width: 900px) {
+    .mid{
+        width: 70%;
+        font-size: 27px ;
+    }
+    #logoimg {
+        width: 150px;
+        height: 150px;
+    }
+}
+@media (max-width: 768px) {
+    .mid {
+        width: 80%;
+        height: auto;
+        font-size: 25px;
+        padding: 50px;
+    }
+
+    #logoimg {
+        width: 130px;
+        height: 130px;
+    }
+
+}
+
+@media (max-width: 480px) {
+    .mid {
+        width: 80%;
+        font-size: 20px;
+        margin: 5% auto;
+        padding: 40px;
+    }
+
+    #logoimg {
+        width: 120px;
+        height: 120px;
+    }
+}

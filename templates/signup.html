@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+{% load static %}
+{% load crispy_forms_tags %}
+
+<html>
+  <head>
+    <meta charset="UTF-8" />
+
+    <title>SignUp</title>
+
+    <link rel="icon" href="{% static 'photos/small logo blackandblue .svg' %}" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Istok+Web:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{% static 'SignUP1.css' %}" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Amiri&display=swap"
+      rel="stylesheet"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+
+  <body>
+    <section class="mid">
+      <div class="text" style="font-family: 'Cairo', sans-serif">
+        إنشاء حساب
+      </div>
+
+      <div class="logo">
+        <img
+          id="logoimg"
+          src="{% static 'photos/small logo blackandblue .svg' %}"
+          alt="real"
+        />
+      </div>
+        <form id="info" method="post" action="{% url 'home:signup' %}">
+                            {% csrf_token %}
+                <label  id="name" style="font-family: 'Cairo', sans-serif">الاسم  </label>
+                    {{ form.username|as_crispy_field }}
+                {% if case == '1' %}
+            <h5> هذا الاسم موحود سابقا , نرجو تجربة واحد اخر</h5>
+                {% endif %}
+                <label  id="asd" style="font-family: 'Cairo', sans-serif">كلمة المرور </label>
+                    {{ form.password|as_crispy_field }}
+            <label  id="password2" style="font-family: 'Cairo', sans-serif">تاكيد كلمة المرور </label>
+
+                    {{ form.conferm_password|as_crispy_field }}
+                <label  id="phone" style="font-family: 'Cairo', sans-serif">رقم الهاتف </label>
+
+                    {{ form.phone_num|as_crispy_field }}
+               {% if case == '2' %}
+            <h5> هذا الرقم موحود سابقا , نرجو تجربة واحد اخر</h5>
+                {% endif %}
+                {% if case == '3' %}
+            <h5> هذا الرقم ليس سوري , نرجو تجربة واحد اخر</h5>
+                {% endif %}
+
+
+
+            <div class="select1">
+                            <label  id="city2" style="font-family: 'Cairo', sans-serif">محافظتك </label>
+
+                <select name="city" id="city" class="select2" required>
+
+
+                    <option value="خارج سوريا">خارج سوريا</option>
+                    <option value="ادلب">ادلب</option>
+                    <option value="حلب">حلب</option>
+                    <option value="دمشق">دمشق</option>
+                    <option value="ريف دمشق">ريف دمشق </option>
+                    <option value="حماه">حماه</option>
+                    <option value="حمص">حمص</option>
+                    <option value="درعا">درعا</option>
+                    <option value="القنيطرة"> القنيطرة</option>
+                    <option value="السويداء">السويداء</option>
+                    <option value="دير الزور">دير الزور</option>
+                    <option value="القامشلي">القامشلي</option>
+                    <option value="الحسكة">الحسكة</option>
+                    <option value="اللاذقية">اللاذقية</option>
+                    <option value="طرطوس">طرطوس</option>
+
+                </select>
+            </div>
+            <label  id="birth2" style="font-family: 'Cairo', sans-serif">تاريخ الميلاد </label>
+                    {{ form.birth|as_crispy_field }}
+            <label  id="Uss" style="font-family: 'Cairo', sans-serif"> من اين سمعت عنا ؟ </label>
+
+            <select name="us" id="us" required>
+                <option value=""></option>
+                <option value="فيسبوك">فيسبوك</option>
+                <option value="انستغرام">انستغرام</option>
+                <option value="من اصدقائك">من اصدقائك</option>
+                <option value="أخرى">أخرى</option>
+
+            </select>
+
+
+
+            <button id="button1" type="submit" style="font-family: 'Cairo', sans-serif">تأكيد</button>
+        </form>
+
+
+
+
+    </section>
+
+
+
+
+
+
+</body>
