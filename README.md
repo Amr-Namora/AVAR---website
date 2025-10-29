@@ -18,7 +18,16 @@ utilizing its built-in ORM and templating engine to deliver a secure and respons
 ## Tech Stack
 - **Backend:** Django, Django ORM
 - **Frontend:** HTML, CSS, Django Templates
-- **Database:** SQLite/PostgreSQL (whichever you used)
+- **Database:** SQLite/PostgreSQL
 
 ## Project Structure
 This project was part of a larger ecosystem that also included a mobile application powered by a Django REST Framework API.
+
+## Key URLs
+- `/login/` - User authentication and login
+- `/signup/` - Create new user accounts
+- `/gallery/` - Browse all real estate properties
+- `/resProfile/<slug:slug>/` - Detailed view of specific real estate property
+
+## Related Projects
+- **[REVE Mobile Application Backend](https://github.com/Amr-Namora/REVE--application)** - The Django REST Framework API that powers the mobile app component of this real estate service
